@@ -5,6 +5,13 @@
  */
 package lab6_noelmartinez;
 
+import java.awt.Color;
+import javax.swing.DefaultListModel;
+import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
 /**
  *
  * @author noelg
@@ -27,21 +34,452 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_habitantes = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jt_nombre = new javax.swing.JTextField();
+        jt_apellido = new javax.swing.JTextField();
+        jt_edad = new javax.swing.JTextField();
+        rb_f = new javax.swing.JRadioButton();
+        rb_m = new javax.swing.JRadioButton();
+        jt_vocacion = new javax.swing.JTextField();
+        rb_siU = new javax.swing.JRadioButton();
+        rb_noU = new javax.swing.JRadioButton();
+        rb_siC = new javax.swing.JRadioButton();
+        rb_noC = new javax.swing.JRadioButton();
+        bt_habitante = new javax.swing.JButton();
+        cb_nacionalidad = new javax.swing.JComboBox<>();
+        jd_pais = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tf_nombrePais = new javax.swing.JTextField();
+        jdate_fechaFundacion = new com.toedter.calendar.JDateChooser();
+        jt_himno = new javax.swing.JTextField();
+        bt_color = new javax.swing.JButton();
+        bt_pais = new javax.swing.JButton();
+        jp_menu1 = new javax.swing.JPopupMenu();
+        jm_agregarhabitante = new javax.swing.JMenuItem();
+        jm_modificarhabitante = new javax.swing.JMenuItem();
+        jm_eliminarhabitante = new javax.swing.JMenuItem();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_masculinos = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jl_femeninas = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jt_paises = new javax.swing.JTree();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTree2 = new javax.swing.JTree();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+
+        jd_habitantes.setMinimumSize(new java.awt.Dimension(998, 540));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setText("Nacionalidad");
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setText("Apellido");
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel4.setText("Edad");
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel5.setText("Genero");
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel6.setText("Vocacion");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel7.setText("¿ Tiene titulo universitario ?");
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel8.setText("¿ Tiene Corona Virus ?");
+
+        rb_f.setText("Femenino");
+
+        rb_m.setText("Masculino");
+
+        rb_siU.setText("Si");
+
+        rb_noU.setText("No");
+
+        rb_siC.setText("Si");
+
+        rb_noC.setText("No");
+
+        bt_habitante.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        bt_habitante.setText("Crear Habitante");
+        bt_habitante.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_habitanteMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_habitantesLayout = new javax.swing.GroupLayout(jd_habitantes.getContentPane());
+        jd_habitantes.getContentPane().setLayout(jd_habitantesLayout);
+        jd_habitantesLayout.setHorizontalGroup(
+            jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_habitantesLayout.createSequentialGroup()
+                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jt_nombre)
+                            .addComponent(jt_apellido)
+                            .addComponent(jt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_nacionalidad, 0, 169, Short.MAX_VALUE))
+                        .addGap(184, 184, 184)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jd_habitantesLayout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jt_vocacion))
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8))
+                            .addGroup(jd_habitantesLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_f)
+                                .addGap(8, 8, 8)
+                                .addComponent(rb_m))
+                            .addGroup(jd_habitantesLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                                        .addComponent(rb_siC)
+                                        .addGap(44, 44, 44)
+                                        .addComponent(rb_noC))
+                                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                                        .addComponent(rb_siU)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(rb_noU))))))
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(414, 414, 414)
+                        .addComponent(bt_habitante)))
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+        jd_habitantesLayout.setVerticalGroup(
+            jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_habitantesLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(rb_f)
+                    .addComponent(rb_m)
+                    .addComponent(cb_nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel6)
+                            .addComponent(jt_vocacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59)
+                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel7)
+                    .addComponent(jt_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90)
+                        .addComponent(bt_habitante))
+                    .addGroup(jd_habitantesLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_siU)
+                            .addComponent(rb_noU))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_habitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rb_noC)
+                            .addComponent(rb_siC))))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jd_pais.setMinimumSize(new java.awt.Dimension(978, 574));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel9.setText("Nombre");
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel10.setText("Fecha de Fundacion");
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel11.setText("Nombre del Himno Nacional");
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel12.setText("Color de la Bandera");
+
+        bt_color.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_colorMouseClicked(evt);
+            }
+        });
+
+        bt_pais.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        bt_pais.setText("Crear Pais");
+        bt_pais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_paisMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_nombrePais, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jdate_fechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(170, 170, 170)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_color, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 179, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jt_himno)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(392, 392, 392)
+                .addComponent(bt_pais, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jt_himno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(tf_nombrePais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(129, 129, 129)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel12)
+                    .addComponent(bt_color, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jdate_fechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addComponent(bt_pais, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
+        );
+
+        javax.swing.GroupLayout jd_paisLayout = new javax.swing.GroupLayout(jd_pais.getContentPane());
+        jd_pais.getContentPane().setLayout(jd_paisLayout);
+        jd_paisLayout.setHorizontalGroup(
+            jd_paisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_paisLayout.setVerticalGroup(
+            jd_paisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jm_agregarhabitante.setText("Agregar Habitante");
+        jp_menu1.add(jm_agregarhabitante);
+
+        jm_modificarhabitante.setText("jMenuItem2");
+        jp_menu1.add(jm_modificarhabitante);
+
+        jm_eliminarhabitante.setText("jMenuItem3");
+        jp_menu1.add(jm_eliminarhabitante);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jScrollPane1.setViewportView(jt_masculinos);
+
+        jl_femeninas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jl_femeninas);
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Paises");
+        jt_paises.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane3.setViewportView(jt_paises);
+
+        jScrollPane4.setViewportView(jTree2);
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setText("Masculinos");
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel14.setText("Femeninas");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(29, 29, 29)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel14)))
+                .addGap(313, 313, 313))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
+                .addGap(82, 82, 82))
+        );
+
+        jMenu1.setText("Crear Habitante");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Crear Pais");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1040, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 564, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        jd_habitantes.setVisible(true);
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        jd_pais.setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void bt_colorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_colorMouseClicked
+        Color color;
+        JColorChooser.showDialog(jMenu1, "Ingrese el color de la bandera", Color.yellow);
+        color = bt_color.getBackground();
+    }//GEN-LAST:event_bt_colorMouseClicked
+
+    private void bt_habitanteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_habitanteMouseClicked
+        String tieneCorona = "";
+        String tieneTitulo = "";
+        if (rb_siC.isSelected()) {
+            tieneCorona = "Si";
+        } else {
+            tieneCorona = "No";
+        }
+        if (rb_siU.isSelected()) {
+            tieneTitulo = "Si";
+        } else {
+            tieneTitulo = "No";
+        }
+
+        if (rb_f.isSelected()) {
+            DefaultListModel modelo
+                    = (DefaultListModel) jl_femeninas.getModel();
+            modelo.addElement(new Persona(cb_nacionalidad.getSelectedItem().toString(), jt_nombre.getText(), jt_apellido.getText(), Integer.parseInt(jt_edad.getText()), rb_f.getText(), jt_vocacion.getText(), tieneTitulo , tieneCorona));
+             jl_femeninas.setModel(modelo);
+             jt_nombre.setText("");
+             cb_nacionalidad.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_bt_habitanteMouseClicked
+
+    private void bt_paisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_paisMouseClicked
+        DefaultTreeModel m = (DefaultTreeModel) jt_paises.getModel();
+        DefaultMutableTreeNode raiz
+                = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_pais;
+        nodo_pais = new DefaultMutableTreeNode(new Pais(tf_nombrePais.getText(), jdate_fechaFundacion.getDate(),jt_himno.getText(), Color.darkGray));
+        
+        DefaultMutableTreeNode pais;
+        pais = new DefaultMutableTreeNode(tf_nombrePais.getText());
+        raiz.add(nodo_pais);
+        m.reload();
+        JOptionPane.showMessageDialog(this,"Pais creado con exito!");
+        
+    }//GEN-LAST:event_bt_paisMouseClicked
 
     /**
      * @param args the command line arguments
@@ -54,7 +492,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -77,7 +515,58 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-
+    DefaultMutableTreeNode nodo_seleccionado;
+    Pais pais_seleccionado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_color;
+    private javax.swing.JButton bt_habitante;
+    private javax.swing.JButton bt_pais;
+    private javax.swing.JComboBox<String> cb_nacionalidad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTree jTree2;
+    private javax.swing.JDialog jd_habitantes;
+    private javax.swing.JDialog jd_pais;
+    private com.toedter.calendar.JDateChooser jdate_fechaFundacion;
+    private javax.swing.JList<String> jl_femeninas;
+    private javax.swing.JMenuItem jm_agregarhabitante;
+    private javax.swing.JMenuItem jm_eliminarhabitante;
+    private javax.swing.JMenuItem jm_modificarhabitante;
+    private javax.swing.JPopupMenu jp_menu1;
+    private javax.swing.JTextField jt_apellido;
+    private javax.swing.JTextField jt_edad;
+    private javax.swing.JTextField jt_himno;
+    private javax.swing.JList<String> jt_masculinos;
+    private javax.swing.JTextField jt_nombre;
+    private javax.swing.JTree jt_paises;
+    private javax.swing.JTextField jt_vocacion;
+    private javax.swing.JRadioButton rb_f;
+    private javax.swing.JRadioButton rb_m;
+    private javax.swing.JRadioButton rb_noC;
+    private javax.swing.JRadioButton rb_noU;
+    private javax.swing.JRadioButton rb_siC;
+    private javax.swing.JRadioButton rb_siU;
+    private javax.swing.JTextField tf_nombrePais;
     // End of variables declaration//GEN-END:variables
 }
