@@ -69,13 +69,16 @@ public class Principal extends javax.swing.JFrame {
         jp_menu1 = new javax.swing.JPopupMenu();
         jm_crearmujer = new javax.swing.JMenuItem();
         jm_crearhombre = new javax.swing.JMenuItem();
+        jm_modificarpais = new javax.swing.JMenuItem();
         bg_genero = new javax.swing.ButtonGroup();
         bg_titulo = new javax.swing.ButtonGroup();
         bg_corona = new javax.swing.ButtonGroup();
         jp_menu2 = new javax.swing.JPopupMenu();
         jm_agregarhabitante = new javax.swing.JMenuItem();
-        jm_modificarhabitante = new javax.swing.JMenuItem();
-        jm_eliminarhabitante = new javax.swing.JMenuItem();
+        jp_menu3 = new javax.swing.JPopupMenu();
+        jm_modificar = new javax.swing.JMenuItem();
+        jm_eliminar = new javax.swing.JMenuItem();
+        jm_expulsar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jl_masculinos = new javax.swing.JList<>();
@@ -359,6 +362,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_menu1.add(jm_crearhombre);
 
+        jm_modificarpais.setText("Modificar Pais");
+        jm_modificarpais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_modificarpaisActionPerformed(evt);
+            }
+        });
+        jp_menu1.add(jm_modificarpais);
+
         jm_agregarhabitante.setText("Agregar ");
         jm_agregarhabitante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,12 +378,29 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_menu2.add(jm_agregarhabitante);
 
-        jm_modificarhabitante.setText("Modificar");
-        jm_modificarhabitante.setToolTipText("");
-        jp_menu2.add(jm_modificarhabitante);
+        jm_modificar.setText("Modificar");
+        jm_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_modificarActionPerformed(evt);
+            }
+        });
+        jp_menu3.add(jm_modificar);
 
-        jm_eliminarhabitante.setText("Eliminar");
-        jp_menu2.add(jm_eliminarhabitante);
+        jm_eliminar.setText("Eliminar");
+        jm_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_eliminarActionPerformed(evt);
+            }
+        });
+        jp_menu3.add(jm_eliminar);
+
+        jm_expulsar.setText("Expulsar");
+        jm_expulsar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_expulsarActionPerformed(evt);
+            }
+        });
+        jp_menu3.add(jm_expulsar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -603,12 +631,20 @@ public class Principal extends javax.swing.JFrame {
                             getLastPathComponent();
             nodo_seleccionado = (DefaultMutableTreeNode) v1;
             //nodo_seleccionado = (DefaultMutableTreeNode) v1;
-            if (nodo_seleccionado.getLevel() == 1) {
-                jp_menu1.show(evt.getComponent(), evt.getX(), evt.getY());
-            } else if (nodo_seleccionado.getLevel() == 2) {
-                jp_menu2.show(evt.getComponent(), evt.getX(), evt.getY());
+            switch (nodo_seleccionado.getLevel()) {
+                case 1:
+                    jp_menu1.show(evt.getComponent(), evt.getX(), evt.getY());
+                    break;
+                case 2:
+                    jp_menu2.show(evt.getComponent(), evt.getX(), evt.getY());
+                    break;
+                case 3:
+                    jp_menu3.show(evt.getComponent(), evt.getX(), evt.getY());
+                    break;
+                default:
+                    break;
             }
-       }
+        }
     }//GEN-LAST:event_jt_paisesMouseClicked
 
     private void jm_agregarhabitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_agregarhabitanteActionPerformed
@@ -620,13 +656,13 @@ public class Principal extends javax.swing.JFrame {
             //obtener la persona a guardar
             DefaultListModel modeloLISTA
                     = (DefaultListModel) jl_masculinos.getModel();
-            
-            String nacionalidad, nombre,apellido;
-            int edad; 
+
+            String nacionalidad, nombre, apellido;
+            int edad;
             nacionalidad
                     = ((Persona) modeloLISTA.get(
                             jl_masculinos.getSelectedIndex())).
-                    getNacionalidad();
+                            getNacionalidad();
 
             nombre = ((Persona) modeloLISTA.get(
                     jl_masculinos.getSelectedIndex())).
@@ -634,35 +670,34 @@ public class Principal extends javax.swing.JFrame {
             edad = ((Persona) modeloLISTA.get(
                     jl_masculinos.getSelectedIndex())).
                     getEdad();
-            apellido = ((Persona)modeloLISTA.get(jl_masculinos.getSelectedIndex())).getApellido();
-            
+            apellido = ((Persona) modeloLISTA.get(jl_masculinos.getSelectedIndex())).getApellido();
+
             int centinela = -1;
-            
-            
+
             if (centinela == -1) {
                 DefaultMutableTreeNode n
-                        = new DefaultMutableTreeNode(nombre+" "+apellido);
+                        = new DefaultMutableTreeNode(nombre + " " + apellido);
                 DefaultMutableTreeNode p
                         = new DefaultMutableTreeNode(
                                 new Persona(nacionalidad, nombre, apellido, edad));
                 n.add(p);
                 nodo_seleccionado.add(n);
                 jl_masculinos.clearSelection();
-            }  // fin if          
-                        
+            }  // fin if
+
         } else if (jl_femeninas.getSelectedIndex() >= 0) {
-             DefaultTreeModel modeloARBOL
+            DefaultTreeModel modeloARBOL
                     = (DefaultTreeModel) jt_paises.getModel();
             //obtener la persona a guardar
             DefaultListModel modeloLISTA
                     = (DefaultListModel) jl_femeninas.getModel();
-            
-            String nacionalidad, nombre,apellido;
-            int edad; 
+
+            String nacionalidad, nombre, apellido;
+            int edad;
             nacionalidad
                     = ((Persona) modeloLISTA.get(
                             jl_femeninas.getSelectedIndex())).
-                    getNacionalidad();
+                            getNacionalidad();
 
             nombre = ((Persona) modeloLISTA.get(
                     jl_femeninas.getSelectedIndex())).
@@ -670,18 +705,18 @@ public class Principal extends javax.swing.JFrame {
             edad = ((Persona) modeloLISTA.get(
                     jl_femeninas.getSelectedIndex())).
                     getEdad();
-            apellido = ((Persona)modeloLISTA.get(jl_femeninas.getSelectedIndex())).getApellido();
-            
+            apellido = ((Persona) modeloLISTA.get(jl_femeninas.getSelectedIndex())).getApellido();
+
             int centinela = -1;
             if (centinela == -1) {
                 DefaultMutableTreeNode n
-                        = new DefaultMutableTreeNode(nombre + " "+apellido);
+                        = new DefaultMutableTreeNode(nombre + " " + apellido);
                 DefaultMutableTreeNode p
                         = new DefaultMutableTreeNode(
                                 new Persona(nacionalidad, nombre, apellido, edad));
                 n.add(p);
                 nodo_seleccionado.add(n);
-            }  // fin if   
+            }  // fin if
             jl_femeninas.clearSelection();
             modeloARBOL.reload();
 
@@ -689,8 +724,55 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,
                     "No hay persona seleccionada");
         }
-
     }//GEN-LAST:event_jm_agregarhabitanteActionPerformed
+
+    private void jm_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_modificarActionPerformed
+        DefaultTreeModel m
+                = (DefaultTreeModel) jt_paises.getModel();
+        nodo_seleccionado.setUserObject(JOptionPane.showInputDialog("nombre"));
+        m.reload();
+    }//GEN-LAST:event_jm_modificarActionPerformed
+
+    private void jm_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_eliminarActionPerformed
+        int response = JOptionPane.showConfirmDialog(
+                this,
+                "Seguro de Eliminar?",
+                "Confirm",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.OK_OPTION) {
+            DefaultTreeModel m
+                    = (DefaultTreeModel) jt_paises.getModel();
+            m.removeNodeFromParent(
+                    nodo_seleccionado);
+            m.reload();
+        }
+    }//GEN-LAST:event_jm_eliminarActionPerformed
+
+    private void jm_modificarpaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_modificarpaisActionPerformed
+         DefaultTreeModel m
+                = (DefaultTreeModel) jt_paises.getModel();
+        nodo_seleccionado.setUserObject(JOptionPane.showInputDialog("Nuevo Pais"));
+        m.reload();
+    }//GEN-LAST:event_jm_modificarpaisActionPerformed
+
+    private void jm_expulsarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_expulsarActionPerformed
+        int response = JOptionPane.showConfirmDialog(
+                this,
+                "Seguro que desea expulsar a la persona ?",
+                "Confirm",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.OK_OPTION) {
+            DefaultTreeModel m
+                    = (DefaultTreeModel) jt_paises.getModel();
+            m.removeNodeFromParent(
+                    nodo_seleccionado);
+            m.reload();
+        }
+    }//GEN-LAST:event_jm_expulsarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -769,10 +851,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jm_agregarhabitante;
     private javax.swing.JMenuItem jm_crearhombre;
     private javax.swing.JMenuItem jm_crearmujer;
-    private javax.swing.JMenuItem jm_eliminarhabitante;
-    private javax.swing.JMenuItem jm_modificarhabitante;
+    private javax.swing.JMenuItem jm_eliminar;
+    private javax.swing.JMenuItem jm_expulsar;
+    private javax.swing.JMenuItem jm_modificar;
+    private javax.swing.JMenuItem jm_modificarpais;
     private javax.swing.JPopupMenu jp_menu1;
     private javax.swing.JPopupMenu jp_menu2;
+    private javax.swing.JPopupMenu jp_menu3;
     private javax.swing.JTextField jt_apellido;
     private javax.swing.JTree jt_coronavirus;
     private javax.swing.JTextField jt_edad;
