@@ -33,6 +33,16 @@ public class Persona {
         this.coronaVirus = coronaVirus;
     }
 
+    public Persona(String nacionalidad, String nombre, String apellido, int edad) {
+        this.nacionalidad = nacionalidad;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+   
+    
+
     public String getNacionalidad() {
         return nacionalidad;
     }
@@ -99,7 +109,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return nombre;
+        return nombre + " "+apellido;
     }
     
 }
